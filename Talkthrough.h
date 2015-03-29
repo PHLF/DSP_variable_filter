@@ -10,6 +10,7 @@
 #include <sysreg.h>
 #include <fract.h>
 #include <filter.h>
+#include <math.h>
 
 
 //--------------------------------------------------------------------------//
@@ -105,5 +106,10 @@ void Process_Data(void);
 
 // in file ISRs.c
 EX_INTERRUPT_HANDLER(Sport0_RX_ISR);
+
+//in file fast_math.c
+fract16 fast_sin(fract16 x);
+fract16 fast_cos(fract16 x);
+unsigned int fast_factorial(unsigned int i);
 
 #endif //__Talkthrough_DEFINED
