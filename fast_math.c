@@ -1,21 +1,23 @@
 #include "Talkthrough.h"
+#define PI	3.141592654lk
+#define double_PI	6.283185307lk
 
 long fract fast_sin(long accum x){
 	long fract y;
 	int high_pow_x;
 	
 	//Is x between -PI and +PI?
-	if(x>3.141592654)
+	if(x>PI)
 	{
-		x=x-6.283185307;
+		x=x-double_PI;
 	}
-	else if(x<-3.141592654)
+	else if(x<-PI)
 	{
-		x=x+6,283185307;
+		x=x+double_PI;
 	}
 	
 	//This is necessary because accumulator only goes to 256.
-	if(x>2.20815||x<-2.20815)
+	if(x>2.20815lk||x<-2.20815lk)
 	{
 		high_pow_x=(int)(x*x*x*x*x*x*x);
 	}
@@ -29,17 +31,17 @@ long fract fast_cos(long accum x){
 	int high_pow_x;
 	
 	//Is x between -PI and +PI?
-	if(x>3.141592654)
+	if(x>PI)
 	{
-		x=x-6.283185307;
+		x=x-double_PI;
 	}
-	else if(x<-3.141592654)
+	else if(x<-PI)
 	{
-		x=x+6,283185307;
+		x=x+double_PI;
 	}
 	
 	//This is necessary because accumulator only goes to 256.
-	if(x>2.51983||x<-2.51983)
+	if(x>2.51983lk||x<-2.51983lk)
 	{
 		high_pow_x=(int)(x*x*x*x*x*x);
 	}
@@ -50,7 +52,7 @@ long fract fast_cos(long accum x){
 
 //Max unsigned int value for ASDP-BF533 is 4294967295.
 unsigned int fast_factorial(unsigned short i){
-	unsigned int array_factorial[12]={
+	unsigned int array_factorial[13]={
 		1,
 		1,
 		2,

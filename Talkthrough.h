@@ -11,6 +11,7 @@
 #include <fract.h>
 #include <filter.h>
 #include <math.h>
+#include <stdfix.h>
 
 
 //--------------------------------------------------------------------------//
@@ -108,8 +109,8 @@ void Process_Data(void);
 EX_INTERRUPT_HANDLER(Sport0_RX_ISR);
 
 //in file fast_math.c
-fract16 fast_sin(fract16 x);
-fract16 fast_cos(fract16 x);
-unsigned int fast_factorial(unsigned int i);
+long fract fast_sin(long accum x);
+long fract fast_cos(long accum x);
+unsigned int fast_factorial(unsigned short i);
 
 #endif //__Talkthrough_DEFINED
