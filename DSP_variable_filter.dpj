@@ -71,6 +71,22 @@
 		</folder>
 		<folder name="Source Files" ext=".c,.cpp,.cxx,.asm,.dsp,.s">
 			<files>
+				<file name=".\dynamic_filter_compute.c">
+					<file-configurations>
+						<file-configuration name="Debug">
+							<excluded-flag value="no"/>
+							<build-with-flag value="project"/>
+							<intermediate-dir>.\Debug</intermediate-dir>
+							<output-dir>.\Debug</output-dir>
+						</file-configuration>
+						<file-configuration name="Release">
+							<excluded-flag value="no"/>
+							<build-with-flag value="project"/>
+							<intermediate-dir>.\Release</intermediate-dir>
+							<output-dir>.\Release</output-dir>
+						</file-configuration>
+					</file-configurations>
+				</file>
 				<file name=".\fast_math.c">
 					<file-configurations>
 						<file-configuration name="Debug">
