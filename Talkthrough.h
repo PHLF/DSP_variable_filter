@@ -68,6 +68,10 @@
 // DSP sampling frequency (Hz)
 #define sampling_freq	96000
 
+// For computation purpose
+#define PI	3.141592654lk
+#define double_PI	6.283185307lk
+
 //--------------------------------------------------------------------------//
 // Global variables															//
 //--------------------------------------------------------------------------//

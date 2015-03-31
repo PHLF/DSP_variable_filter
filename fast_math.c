@@ -1,8 +1,5 @@
 #include "Talkthrough.h"
 
-#define PI	3.141592654lk
-#define double_PI	6.283185307lk
-
 long fract fast_sin(long accum x){
 	long fract y;
 	int high_pow_x;
