@@ -115,11 +115,11 @@ void Process_Data(void);
 EX_INTERRUPT_HANDLER(Sport0_RX_ISR);
 
 // in file fast_math.c
-long fract fast_sin(long accum x);
-long fract fast_cos(long accum x);
+fract32 fast_sin(long accum x);
+fract32 fast_cos(long accum x);
 unsigned int fast_factorial(unsigned short i);
 
 // in file dynamic_filter_compute.c
-void filter_coeffs(fract* coef, signed int fc);
+void filter_coeffs(fract16* coef, signed int fc);
 
 #endif //__Talkthrough_DEFINED

@@ -1,8 +1,9 @@
 #include "Talkthrough.h"
 
-long fract fast_sin(long accum x){
-	long fract y;
-	int high_pow_x;
+fract32 fast_sin(long accum x){
+	fract32 y;
+	int x_pow_5;
+	int x_pow_7;
 	
 	//Is x between -PI and +PI?
 	if(x>PI)
@@ -14,19 +15,29 @@ long fract fast_sin(long accum x){
 		x=x+double_PI;
 	}
 	
-	//This is necessary because accumulator only goes to 256.
-	if(x>2.20815lk||x<-2.20815lk)
+	//This is necessary because accumulator min and max values are -256 and 256.
+	if(x<2.20817lk||x>-2.20817lk)
 	{
-		high_pow_x=(int)(x*x*x*x*x*x*x);
+		y=bitslk(x-((x*x*x)/fast_factorial(3))+((x*x*x*x*x)/fast_factorial(5))-(x*x*x*x*x*x*x/fast_factorial(7)));
+	}
+	else if(x>2.20817lk||x<-2.20817lk)
+	{
+		x_pow_7=(int)(x*x*x*x*x*x*x);
+		y=bitslk(x-((x*x*x)/fast_factorial(3))+((x*x*x*x*x)/fast_factorial(5))-(x_pow_7/fast_factorial(7)));
+	}
+	else if(x>3.03143lk||x<-3.03143lk)
+	{
+		x_pow_5=(int)(x*x*x*x*x*x*x);
+		x_pow_7=(int)(x*x*x*x*x*x*x);
+		y=bitslk(x-((x*x*x)/fast_factorial(3))+(x_pow_5/fast_factorial(5))-(x_pow_7/fast_factorial(7)));
 	}
 	
-	y=x-((x*x*x)/fast_factorial(3))+((x*x*x*x*x)/fast_factorial(5))-(high_pow_x/fast_factorial(7));
 	return y;
 }
 
-long fract fast_cos(long accum x){
-	long fract y;
-	int high_pow_x;
+fract32 fast_cos(long accum x){
+	fract32 y;
+	int x_pow_6;
 	
 	//Is x between -PI and +PI?
 	if(x>PI)
@@ -38,13 +49,17 @@ long fract fast_cos(long accum x){
 		x=x+double_PI;
 	}
 	
-	//This is necessary because accumulator only goes to 256.
-	if(x>2.51983lk||x<-2.51983lk)
+	//This is necessary because accumulator min and max values are -256 and 256.
+	if(x<2.51984lk||x>-2.51984lk)
 	{
-		high_pow_x=(int)(x*x*x*x*x*x);
+		y=bitslk(1-((x*x)/fast_factorial(2))+((x*x*x*x)/fast_factorial(4))-(x*x*x*x*x*x/fast_factorial(6)));
+	}
+	else if(x>2.51984lk||x<-2.51984lk)
+	{
+		x_pow_6=(int)(x*x*x*x*x*x);
+		y=bitslk(1-((x*x)/fast_factorial(2))+((x*x*x*x)/fast_factorial(4))-(x_pow_6/fast_factorial(6)));
 	}
 	
-	y=1-((x*x)/fast_factorial(2))+((x*x*x*x)/fast_factorial(4))-(high_pow_x/fast_factorial(6));
 	return y;
 }
 

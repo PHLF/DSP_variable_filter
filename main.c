@@ -82,20 +82,10 @@ volatile short sRxBuffer[2];
 fract16 delayL[TAPS]={0};
 fract16 delayR[TAPS]={0};
 
-fract16 coef[TAPS] = {
-	// low-pass
-	// #include "coef32_low2_158taps.dat"
-	#include "coef32.dat"
-	// high-pass filter with Fstop=3000 and Fpass=3500
-	// #include "fdacoefs_high4_032taps.dat"
-	// band pas-pass filters
-	// #include "fdacoefs_pass4_341taps.dat"
-	// #include "fdacoefs_pass4_032taps.dat"
-	// band-stop
-	// #include "fdacoefs_stop4_162taps.dat"
-	
-	
-};
+fract16 coef[TAPS];
+
+// We compute the  LP-filter coefficient according to the number of TAPS and the cutoff frequency (Hz) value.
+filter_coeffs(coef, 1000);
 
 
 fir_state_fr16 stateL;
