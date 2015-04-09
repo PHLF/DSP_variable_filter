@@ -55,6 +55,7 @@ short sChannel0RightOut[BUFFER_SIZE];
 
 
 
+
 // array for registers to configure the ad1836
 // names are defined in "Talkthrough.h"
 volatile short sCodec1836TxRegs[CODEC_1836_REGS_LENGTH] =

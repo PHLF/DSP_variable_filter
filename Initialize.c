@@ -39,6 +39,80 @@ void Init_FIR(void)
 	fir_init(stateL, coef, delayL, TAPS, 1);
 }
 
+/*
+void Init_FIR1(void)
+{
+	fir_init(stateR1, coef1, delayR1, TAPS1, 1);
+	fir_init(stateL1, coef1, delayL1, TAPS1, 1);
+}
+
+void Init_FIR2(void)
+{
+	fir_init(stateR2, coef2, delayR2, TAPS2, 1);
+	fir_init(stateL2, coef2, delayL2, TAPS2, 1);
+}
+
+void Init_FIR3(void)
+{
+	fir_init(stateR3, coef3, delayR3, TAPS3, 1);
+	fir_init(stateL3, coef3, delayL3, TAPS3, 1);
+}
+void Init_FIR4(void)
+{
+	fir_init(stateR4, coef4, delayR4, TAPS4, 1);
+	fir_init(stateL4, coef4, delayL4, TAPS4, 1);
+}
+
+void Init_FIR5(void)
+{
+	fir_init(stateR5, coef5, delayR5, TAPS5, 1);
+	fir_init(stateL5, coef5, delayL5, TAPS5, 1);
+}
+void Init_FIR6(void)
+{
+	fir_init(stateR6, coef6, delayR6, TAPS6, 1);
+	fir_init(stateL6, coef6, delayL6, TAPS6, 1);
+}
+
+void Init_FIR7(void)
+{
+	fir_init(stateR7, coef7, delayR7, TAPS7, 1);
+	fir_init(stateL7, coef7, delayL7, TAPS7, 1);
+}
+
+void Init_FIR8(void)
+{
+	fir_init(stateR8, coef8, delayR8, TAPS8, 1);
+	fir_init(stateL8, coef8, delayL8, TAPS8, 1);
+}
+void Init_FIR9(void)
+{
+	fir_init(stateR9, coef9, delayR9, TAPS9, 1);
+	fir_init(stateL9, coef9, delayL9, TAPS9, 1);
+}
+
+void Init_FIR10(void)
+{
+	fir_init(stateR10, coef10, delayR10, TAPS10, 1);
+	fir_init(stateL10, coef10, delayL10, TAPS10, 1);
+}
+
+void Init_FIR11(void)
+{
+	fir_init(stateR11, coef11, delayR11, TAPS11, 1);
+	fir_init(stateL11, coef11, delayL11, TAPS11, 1);
+}
+void Init_FIR12(void)
+{
+	fir_init(stateR12, coef12, delayR12, TAPS12, 1);
+	fir_init(stateL12, coef12, delayL12, TAPS12, 1);
+}
+*/
+void Init_FIR13(void)
+{
+	fir_init(stateR13, coef13, delayR13, TAPS13, 1);
+	fir_init(stateL13, coef13, delayL13, TAPS13, 1);
+}
 
 //--------------------------------------------------------------------------//
 // Function:	Init1836()													//
