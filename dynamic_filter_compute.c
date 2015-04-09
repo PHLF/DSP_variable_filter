@@ -4,6 +4,8 @@ void filter_coeffs(fract16 coef[], signed int fc)
 {
 	short i;
 	short M;
+	
+	long accum phase;
 	fract16 ft;
 	
 	M=TAPS-1;
@@ -18,13 +20,15 @@ void filter_coeffs(fract16 coef[], signed int fc)
 		}
 		else if(i!=(M/2))
 		{
-			coef[i]=0;//fast_sin(double_PI*ft*(i-(M/2)))/(PI*(M/2));
+			phase=double_PI*lkbits(ft*(i-(M/2))/(PI*(M/2)));
+			coef[i]=fast_sin(phase);
 		}
 	}
 	
 	// Hamming window weights computation.
 	for(i=0;i<=TAPS;i++)
 	{
-		coef[i]=0;//coef[i]*(0.54r-0.46r*fast_cos((long accum)((double_PI*i)/M)));
+		phase=(double_PI*i)/M;
+		coef[i]=coef[i]*0.54-0.46*fast_cos(phase);
 	}
 }
