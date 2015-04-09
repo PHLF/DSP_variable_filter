@@ -84,10 +84,6 @@ fract16 delayR[TAPS]={0};
 
 fract16 coef[TAPS];
 
-// We compute the  LP-filter coefficient according to the number of TAPS and the cutoff frequency (Hz) value.
-filter_coeffs(coef, 1000);
-
-
 fir_state_fr16 stateL;
 fir_state_fr16 stateR;
 
@@ -116,6 +112,9 @@ void main(void)
 	Init_DMA();
 	Init_Interrupts();
 	Enable_DMA_Sport0();
+	
+	// We compute the  LP-filter coefficient according to the number of TAPS and the cutoff frequency (Hz) value.
+	filter_coeffs(coef, 1000);
 	
 
 	while(1);
